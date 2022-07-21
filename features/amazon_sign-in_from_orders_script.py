@@ -6,7 +6,7 @@ driver.get('https://www.amazon.com/')
 
 driver.find_element(By.ID, 'nav-orders').click()
 
-assert driver.find_element(By.XPath, "//h1[contains(text()= 'Sign-In')]") and driver.find_element(By.ID, 'ap_email')
+assert driver.find_element(By.XPATH, "//h1[contains(text(), 'Sign-In')]") and driver.find_element(By.ID, 'ap_email')
 
 f'Error! Cannot find Sign In header and/or email input field'
 
