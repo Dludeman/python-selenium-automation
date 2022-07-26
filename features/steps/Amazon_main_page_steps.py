@@ -28,6 +28,6 @@ def step_impl(context):
 
 @then("Verify cart is empty")
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//*[text()='Your Amazon Cart is empty']")
-#"//*[contains(text()='Your Amazon Cart is empty')]"
-   # $x("//*[contains(text(),'Your Amazon Cart is empty')]")
+    actual_result = context.driver.find_element(By.XPATH, "//h2").text
+    expected_result = "Your Amazon Cart is empty"
+    assert actual_result == expected_result, f'Actual result {actual_result} does not match the expected result {expected_result}'
